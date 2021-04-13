@@ -1,0 +1,1930 @@
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    font-family: 'Blogger Sans Regular';
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+@font-face {
+	font-family: 'Blogger Sans Regular';
+	src: url('../fonts/Blogger Sans.eot');
+	src: local('☺'), url('../fonts/Blogger Sans.woff') format('woff'), url('../fonts/Blogger Sans.ttf') format('truetype'), url('../fonts/Blogger Sans.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Blogger Sans-Medium';
+	src: url('../fonts/Blogger Sans-Medium.eot');
+	src: local('☺'), url('../fonts/Blogger Sans-Medium.woff') format('woff'), url('../fonts/Blogger Sans-Medium.ttf') format('truetype'), url('../fonts/Blogger Sans-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Blogger Bans Bold';
+	src: url('../fonts/ROJTsDoN.eot');
+	src: local('☺'), url('../fonts/ROJTsDoN.woff') format('woff'), url('../fonts/ROJTsDoN.ttf') format('truetype'), url('../fonts/ROJTsDoN.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.main {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 82px;
+	&__circel {
+		position: absolute;
+		right: 0;
+		top: 175px;
+		z-index: -1;
+		@media (max-width: 1265px) {
+			display: none;
+		};
+	}
+	.container {
+		max-width: 1190px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+	&__burger-wrp {
+		display: none;
+		@media (max-width: 755px) {
+			display: block;
+			position: fixed;
+			top: 35px;
+			right: 15px;
+			z-index: 10;
+		}
+	}
+	& .header {
+		&__logo {
+			padding-bottom: 20px;
+			img {
+				@media (max-width: 795px) {
+					width: 250px;
+					height: 51px;
+				}
+			}
+			@media (max-width: 755px) {
+				border-bottom: solid 1px #EEEEEE;
+			}
+		}
+
+		&__menu-1 {
+			padding-top: 23px;
+			display: flex;
+			justify-content: space-between;
+			height: 56px;
+			border-bottom: solid 1px #EEEEEE;
+			@media (max-width: 755px) {
+				display: block;
+				border-bottom: none;
+				right: 0;
+				background-color: #fff;
+				width: 270px;
+				height: 100vh;
+				padding-left: 30px;
+				position: fixed;
+				padding-top: 35px;
+				z-index: 5;
+				transform: translateY(-100%);
+				transition: .5s;
+				overflow: auto;
+			}
+
+		}
+		&__active {
+			transform: translateY(0%);
+		}
+		li {
+			display: inline-block;
+			font-size: 16px;
+			margin-right: 36px;
+			color: #707070;
+			transition: all 0.2s;
+			@media (max-width: 755px) {
+				display: block;
+				margin-bottom: 30px;
+				font-size: 20px !important;
+			}
+			&:hover {
+				color: #F07FAE;
+			}
+			&::after {
+				content: "";
+				display: inline-block;
+				width: 100%;
+				height: 1px;
+				background-color: #F07FAE;
+				transform: translateY(-10px) scale(0);
+				transition: all 0.2s;
+				@media (max-width: 755px) {
+					display: none;
+				}
+			}
+			&:hover::after {
+				transform: translateY(-10px) scale(1);
+			}
+			@media (max-width: 970px) {
+				margin-right: 17px;
+				font-size: 14px;
+			}
+		}
+		&__incons-wrp {
+			display: flex;
+			align-items: center;
+			margin-top: -17px;
+			@media (max-width: 755px) {
+				margin-top: 15px;
+			}
+		}
+		svg {
+			display: block;
+			margin-left: 20px;
+			cursor: pointer;
+			path {
+				transition: all .1s;
+				&:hover {
+					fill: #F07FAE;
+				}
+			}
+			@media (max-width: 755px) {
+				margin: 0 20px 0 0;
+			}
+		}
+		&__menu-2 {
+			padding-top: 30px;
+			display: flex;
+			justify-content: space-between;
+			@media (max-width: 755px) {
+				display: block;
+			}
+		}
+		&__search-wrp {
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				right: 13px;
+				top: 15px;
+				width: 25px;
+				height: 25px;
+				background-image: url(../img/main_page/search.svg);
+				background-repeat: no-repeat;
+				cursor: pointer;
+			}
+		}
+		&__search {
+			width: 370px;
+			height: 50px;
+			border: solid 1px #EEEEEE;
+			border-radius: 10px;
+			padding-left: 19px;
+			padding-right: 35px;
+			font-size: 16px;
+			color: #707070;
+			//background-image: url(../img/main_page/search.svg);
+			background-repeat: no-repeat;
+			background-position: 337px 15px;
+		}
+		&__contacts-cartman-wrp {
+			display: flex;
+			@media (max-width: 755px) {
+				justify-content: space-between;
+				margin-top: 20px;
+			}
+		}
+		&__contacts {
+			margin-right: 10px;
+		}
+		&__tel {
+				font-family: 'Blogger Bans Bold';
+				color: #333333;
+				font-size: 18px;
+				margin-right: 18px;
+				@media (max-width: 795px) {
+					font-size: 16px;
+				}
+		}
+		.mail {
+			@media (max-width: 476px) {
+				display: none;
+			}
+		}
+		&__email {
+			color: #333333;
+			font-size: 16px;
+			@media (max-width: 476px) {
+				display: none;
+			}
+		}
+		&__time-work {
+			margin-top: 10px;
+			color: #707070;
+			font-size: 15px;
+			span {
+				@media (max-width: 476px) {
+					display: none;
+				}
+			}
+		}
+		&__cart-man {
+			//position: relative;
+			&::before {
+				content: "";
+				height: 50px;
+				display: inline-block;
+				width: 1px;
+				background-color: #EEEEEE;
+				margin-right: 20px;
+				margin-left: 5px;
+				@media (max-width: 755px) {
+					display: none;
+				}
+			}
+		}
+		&__search-big {
+			display: none;
+			margin-right: 17px;
+			// margin-top: 7px;
+		}
+		@media (max-width: 1133px) {
+			&__search-big {
+				display: inline;
+			}
+			&__search-wrp {
+				display: none;
+			}
+			&__man {
+				width: 23px;
+				height: 30px;
+			}
+			&__cart {
+				width: 30px;
+				height: 30px;
+				margin:0 0 0 14px !important;
+			}
+		};
+		&__cart {
+			margin-left: 30px;
+		}
+		&__catalog-wrp {
+			height: 70px;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 40px;
+			align-items: center;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			transition: all .5s;
+			@media (max-width: 867px) {
+				padding: 0 22px;
+			}
+			@media (max-width: 760px) {
+				display: block;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				background-color: #fff;
+				border-radius: none;
+				padding-top: 32px;
+				z-index: 10;
+				transform: translateY(-100%);
+			}
+			a {
+				font-size: 18px;
+				font-family: 'Blogger Bans Bold';
+				color: #333333;
+				text-align: center;
+				padding: 0 11px;
+				display: block;
+				transition: all .2s;
+				&:hover {
+					color: #878787;
+				}
+				@media (max-width: 1025px) {
+					width: 100%;
+				}
+				@media (max-width: 867px) {
+					font-size: 16px;
+				}
+				@media (max-width: 760px) {
+					margin-bottom: 32px;
+					font-size: 24px;
+					font-family: 'Blogger Sans Regular';
+					span {
+						border-bottom: solid 1px #878787;
+					}
+				}
+				@media (max-width: 320px) {
+					text-align: left;
+					font-size: 20px;
+				}
+			}
+		}
+		&__catalog-title {
+			display: none;
+			font-size: 24px;
+			font-family: 'Blogger Bans Bold';
+			position: relative;
+			text-align: center;
+			margin-bottom: 32px;
+			img {
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			@media (max-width: 760px) {
+				display: block;
+			}
+			@media (max-width: 320px) {
+				text-align: left;
+				padding-left: 11px;
+			}
+		}
+		&__button {
+			margin-top: 15px;
+			display: none;
+			@media (max-width: 760px) {
+				display: block;
+			}
+			input {
+				display: flex;
+				margin: 0 auto;
+				width: 70%;
+				height: 50px;
+				justify-content: center;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+				border-radius: 10px;
+				background-color: transparent;
+				color: #333333;
+				font-size: 18px;
+				font-family: 'Blogger Bans Bold';
+				@media (max-width: 455px) {
+					width: 100%;
+				}
+			}
+		}
+		&__active {
+			transform: translateY(0%);
+		}
+	}// END HEADER
+
+	// main__presentation================================================
+
+	&__presentaition {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 51px;
+		@media (max-width: 1080px) {
+			display: block;
+		}
+	}
+	&__blue {
+		width: 767px;
+		height: 512px;
+		background-image: url(../img/main_page/blue_bg.png);
+		background-size: cover;
+		background-position: center;
+		border-radius: 10px;
+		display: flex;
+		padding-left: 68px;
+		position: relative;
+		@media (max-width: 1080px) {
+			margin: 0 auto;
+			width: 850px;
+		}
+		@media (max-width: 870px) {
+			width: 100%;
+		}
+		@media (max-width: 786px) {
+			height: 385px;
+		}
+		@media (max-width: 639px) {
+			padding: 0;
+		}
+
+	}
+	&__blue-contetnt-wrp {
+		@media (max-width: 639px) {
+			margin: 0 auto;
+		}
+	}
+	&__desk-bilgou {
+		font-family: 'Blogger Bans Bold';
+		font-size: 50px;
+		color: #fff;
+		margin-top: 130px;
+		@media (max-width: 786px) {
+			margin-top: 63px;
+		}
+		@media (max-width: 639px) {
+			margin-top: 28px;
+			font-size: 30px;
+		}
+	}
+	&__blue-text {
+		font-size: 18px;
+		color: #fff;
+		line-height: 22px;
+		max-width: 370px;
+		margin-top: 30px;
+		@media (max-width: 639px) {
+			display: none;
+		}
+	}
+	&__blue-btn {
+		width: 203px;
+		height: 50px;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 27px;
+		color: #333333;
+		font-size: 16px;
+		font-family: 'Blogger Bans Bold';
+		border-radius: 5px;
+		transition: all .3s;
+		&:hover {
+			background-color: rgb(204, 204, 204);
+		}
+		@media (max-width: 786px) {
+			margin-top: 15px;
+		}
+		@media (max-width: 639px) {
+			margin: 15px auto 0 auto;
+		}
+	}
+	&__blue-img-wrp {
+		position: absolute;
+		bottom: 28px;
+		right: 20px;
+		@media (max-width: 786px) {
+			margin-right: 20px;
+		}
+		img {
+			@media (max-width: 786px) {
+				height: 372px;
+			}
+		}
+		@media (max-width: 1200px) {
+			right: 0;
+		}
+		@media (max-width: 639px) {
+			display: none;
+		}
+
+	}
+	&__blue-img-adapt {
+		display: none;
+		@media (max-width: 639px) {
+			display: block;
+			height: 226px;
+			margin: 0 auto;
+			margin-top: 13px;
+		}
+	}
+
+	&__pink-green {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		margin-left: 15px;
+		@media (max-width: 1080px) {
+			flex-direction: row;
+			justify-content: space-between;
+			margin-left: 0;
+			max-width: 850px;
+			margin: 20px auto 0 auto;
+		}
+		@media (max-width: 718px) {
+			display: none;
+		}
+	}
+	.green-pink {
+		width: 378px;
+		height: 240px;
+		border-radius: 10px;
+		@media (max-width: 786px) {
+			height: 185px;
+			width: 346px;
+		}
+	}
+	&__green {
+		background: linear-gradient(0deg, rgba(0, 141, 65, 0.2), rgba(0, 141, 65, 0.2)), linear-gradient(113.62deg, #2AB86B 0%, #5DE39A 97.37%);
+		opacity: 0.9;
+		box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+		display: flex;
+		position: relative;
+	}
+	&__green-pink-content-wrp {
+		margin-top: 43px;
+		padding-left: 28px;
+		@media (max-width: 786px) {
+			margin-top: 30px;
+		}
+	}
+	&__green-pink-title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 22px;
+		line-height: 25px;
+		color: #fff;
+		max-width: 205px;
+		@media (max-width: 786px) {
+			font-size: 20px;
+		}
+	}
+	.green-text {
+		@media (max-width: 786px) {
+			max-width: 155px;
+			line-height: 20px;
+		}
+		span {
+			@media (max-width: 786px) {
+				display: none;
+			}
+		}
+	}
+	&__green-pink-text {
+		font-style: normal;
+		font-size: 16px;
+		line-height: 25px;
+		color: #fff;
+		max-width: 228px;
+		@media (max-width: 786px) {
+			line-height: 20px;
+		}
+	}
+	&__green-pink-btn {
+		font-family: 'Blogger Bans Bold';
+		font-size: 16px;
+		color: #fff;
+		border-bottom: 1px solid #fff;
+		position: relative;
+		margin-top: 20px;
+		display: inline-block;
+		@media (max-width: 786px) {
+			margin-top: 10px;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			width: 12px;
+			height: 7px;
+			background-image: url(../img/main_page/arrow.svg);
+			background-repeat: no-repeat;
+			display: inline-block;
+			margin-left: 10px;
+			margin-top: 7px;
+		}
+	}
+	&__green-img-wrp {
+		position: absolute;
+		right: -9px;
+		@media (max-width: 786px) {
+			right: 10px;
+			top: 11px;
+		}
+	}
+	&__pink-img-wrp {
+		position: absolute;
+		right: -9px;
+		bottom: 15px;
+		@media (max-width: 786px) {
+			bottom: -5px;
+		}
+	}
+	&__stoika {
+		@media (max-width: 786px) {
+			height: 145px;
+		}
+	}
+	&__pink {
+		background: linear-gradient(112.82deg, #F68AB1 0%, #FEB5CF 100%);
+		opacity: 0.9;
+		box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+		display: flex;
+		position: relative;
+	}
+	&__eight-wrp {
+		right: -5px;
+    	//bottom: 9px;
+		display: block;
+	}
+	&__eight {
+		@media (max-width: 786px) {
+			height: 200px;
+		}
+	}
+
+}// КОНЕЦ MAIN SECTION==================================
+
+// GOODS SECTION==========================================
+
+.goods {
+	width: 100%;
+	min-height: 482px;
+	padding-bottom: 80px;
+	@media (max-width: 480px) {
+		padding-bottom: 0;
+		min-height: 400px;
+	}
+	.container{
+		max-width: 1190px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+	&__text-wrp {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__goods-month {
+		font-family: 'Blogger Bans Bold';
+		font-size: 30px;
+		@media (max-width: 768px) {
+			font-size: 25px;
+		}
+		@media (max-width: 400px) {
+			font-size: 20px;
+		}
+	}
+	&__to-catalog {
+		font-family: 'Blogger Sans-Medium';
+		font-size: 16px;
+		color: #333333;
+		border-bottom: 1px solid #333333;
+		position: relative;
+		display: inline-block;
+		height: 100%;
+		margin-right: 15px;
+		&::after {
+			content: "";
+			background-image: url(../img/main_page/arrow-catalog.svg);
+			background-repeat: no-repeat;
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			position: absolute;
+			top: 7px;
+			right: -12px;
+		}
+	}
+	&__goods-card-wrp {
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 1040px) {
+			padding: 0 80px;
+		}
+		@media (max-width: 963px) {
+			padding: 0 50px;
+		}
+		@media (max-width: 880px) {
+			padding: 0;
+		}
+		@media (max-width: 710px) {
+			padding: 0 80px;
+		}
+		@media (max-width: 648px) {
+			padding: 0 40px;
+		}
+		@media (max-width: 565px) {
+			padding: 0 20px;
+		}
+		@media (max-width: 518px) {
+			padding: 0;
+		}
+		@media (max-width: 480px) {
+			padding: 0 40px;
+		}
+		@media (max-width: 400px) {
+			padding: 0 20px;
+		}
+		@media (max-width: 350px) {
+			padding: 0;
+		}
+	}
+	&__card {
+		max-width: 270px;
+		height: 433px;
+		border: 1px solid #EEEEEE;
+		border-radius: 10px;
+		padding: 0 20px;
+		position: relative;
+		@media (max-width: 1120px) {
+			width: 250px;
+			height: 390px;
+		}
+		@media (max-width: 1040px) {
+			&:last-child {
+				display: none;
+			}
+		}
+		@media (max-width: 800px) {
+			width: 225px;
+			height: 375px;
+			padding: 0 15px;
+		}
+		@media (max-width: 710px) {
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+		@media (max-width: 480px) {
+			width: 140px;
+			height: 282px;
+			padding: 0 10px;
+		}
+	}
+	&__discount-wrp {
+		position: absolute;
+		top: 24px;
+		left: 20px;
+		@media (max-width: 480px) {
+			display: flex;
+			top: 10px;
+		}
+	}
+	&__discount, &__recomend {
+		font-family: 'Blogger Bans Bold';
+		font-size: 10px;
+		color: #fff;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__discount {
+		width: 47px;
+		height: 25px;
+		background-color: #5DE39A;
+		@media (max-width: 480px) {
+			width: 36px;
+			height: 20px;
+		}
+	}
+	&__recomend {
+		width: 92px;
+		height: 25px;
+		background-color: #FFC480;
+		margin-top: 5px;
+		@media (max-width: 480px) {
+			margin-top: 0;
+			margin-left: 5px;
+			width: 70px;
+			height: 20px;
+		}
+	}
+	&__img {
+		display: block;
+		margin: 30px auto 0px auto;
+	}
+	.img-bilgou {
+		margin: 47px 0px 42px 0px;
+		@media (max-width: 1130px) {
+			width: 189px;
+			height: 101px;
+			margin: 40px 0px 55px 0px;
+		}
+		@media (max-width: 1120px) {
+			margin-bottom: 46px;
+		}
+		@media (max-width: 800px) {
+			margin-bottom: 37px;
+		}
+		@media (max-width: 480px) {
+			width: 114px;
+			height: 62px;
+			display: block;
+			margin: 27px auto 12px auto;
+		}
+	}
+	.balls {
+		@media (max-width: 1130px) {
+			width: 136px;
+			height: 132px;
+		}
+		@media (max-width: 480px) {
+			width: 78px;
+			height: 76px;
+			margin-bottom: 60px;
+		}
+		@media (max-width: 480px) {
+			margin-top: 14px;
+			margin-bottom: 11px;
+		}
+	}
+	.target-img {
+		@media (max-width: 1130px) {
+			width: 190px;
+			height: 130px;
+		}
+	}
+	.bag {
+		width: 136px;
+		height: 132px;
+		margin-bottom: 52px;
+		@media (max-width: 1120px) {
+			margin-bottom: 0;
+		}
+	}
+	&__title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 18px;
+		margin-top: 34px;
+		@media (max-width: 1120px) {
+			font-size: 16px;
+			margin-top: 25px;
+		}
+		@media (max-width: 800px) {
+			margin-top: 16px;
+		}
+		@media (max-width: 480px) {
+			margin-top: 0;
+			font-size: 15px;
+			line-height: 16px;
+		}
+	}
+	.balls-title {
+		@media (max-width: 480px) {
+			margin-bottom: 23px;
+		}
+	}
+	.bilgou-title {
+		@media (max-width: 800px) {
+			width: 110%;
+		}
+		@media (max-width: 480px) {
+			font-size: 15px;
+			line-height: 16px;
+			width: 100%;
+		}
+	}
+	.target {
+		width: 110%;
+		margin-bottom: 28px;
+	}
+	&__sub-title {
+		color: #707070;
+		font-size: 16px;
+		line-height: 18px;
+		margin-top: 10px;
+		@media (max-width: 480px) {
+			display: none;
+		}
+	}
+	&__buy-good-price {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 480px) {
+			display: block;
+		}
+	}
+	&__price-wrp {
+		@media (max-width: 480px) {
+			display: flex;
+			margin-top: 7px;
+		}
+	}
+	&__price {
+		font-family: 'Blogger Bans Bold';
+		font-size: 20px;
+		margin-top: 16px;
+		@media (max-width: 800px) {
+			font-size: 18px;
+		}
+		@media (max-width: 480px) {
+			margin-top: 0;
+			font-size: 18px;
+		}
+	}
+	&__price-before {
+		font-size: 16px;
+		color: #707070;
+		text-decoration: line-through;
+	}
+	&__counter {
+		width: 140px;
+		height: 50px;
+		border: 1px solid #DFDFDF;
+		border-radius: 5px;
+		margin-top: 7px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 0 0 15px;
+		overflow: hidden;
+		@media (max-width: 1120px) {
+			width: 121px;
+			padding: 0 0 0 10px;
+		}
+		@media (max-width: 480px) {
+			padding-left: 0;
+			width: 100%;
+			height: 40px;
+		}
+	}
+	&__count {
+		font-size: 14px;
+		@media (max-width: 480px) {
+			display: none;
+		}
+	}
+	&__arrows-wrp {
+		@media (max-width: 480px) {
+			display: none;
+		}
+	}
+	&__arrow-count-top, &__arrow-count-bootom {
+		display: block;
+		cursor: pointer;
+	}
+	&__arrow-count-top {
+		transform: rotate(-90deg);
+		margin-bottom: 8px;
+	}
+	&__arrow-count-bootom {
+		transform: rotate(90deg);
+		margin-top: 8px;
+	}
+	&__btn-buy {
+		font-family: 'Blogger Bans Bold';
+		font-size: 16px;
+		color: #fff;
+		width: 77px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #F07FAE;
+		@media (max-width: 480px) {
+			width: 100%;
+		}
+	}
+	&__btn-more {
+		width: 100%;
+		height: 40px;
+		border: 1px solid #DFDFDF;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 15px;
+		font-family: 'Blogger Bans Bold';
+		font-size: 18px;
+		color: #333333;
+		transition: all .3s;
+		&:hover {
+			background-color: #DFDFDF;
+		}
+		@media (max-width: 480px) {
+			height: 30px;
+			margin-top: 5px;
+		}
+	}
+
+}// END GOODS SECTION=============================
+
+//SECTION PSYCHOLOGIST================================
+.psychologist {
+	width: 100%;
+	min-height: 481px;
+	.container {
+		max-width: 1190px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+	&__title-wrp {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 30px;
+		@media (max-width: 768px) {
+			font-size: 25px;
+		}
+		@media (max-width: 400px) {
+			font-size: 20px;
+		}
+	}
+	&__content-wrp {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+		@media (max-width: 735px) {
+			display: block;
+		}
+	}
+	&__video {
+		width: 570px;
+		height: 433px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		background-image: url(../img/main_page/video1.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		@media (max-width: 1120px) {
+			width: 500px;
+			height: 390px;
+		}
+		@media (max-width: 1040px) {
+			width: 590px;
+		}
+		@media (max-width: 880px) {
+			width: 570px;
+		}
+		@media (max-width: 852px) {
+			width: 475px;
+		}
+		@media (max-width: 768px) {
+			height: 375px;
+		}
+		@media (max-width: 735px) {
+			margin: 0 auto;
+		}
+		@media (max-width: 497px) {
+			width: 100%;
+			height: 290px;
+		}
+	}
+	&__play {
+		display: block;
+	}
+	&__cards-wrp {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 1040px) {
+			margin: 0 auto;
+		}
+		@media (max-width: 735px) {
+			justify-content: center;
+			margin-top: 10px;
+		}
+		@media (max-width: 480px) {
+			justify-content: space-between;
+			padding: 0 50px;
+		}
+		@media (max-width: 410px) {
+			padding: 0;
+		}
+	}
+	.goods__card {
+		&:last-child {
+			@media (max-width: 735px) {
+				display: block;
+			}
+		}
+	}
+	.card-bilgou {
+		margin-right: 30px;
+		@media (max-width: 1175px) {
+			margin-right: 10px;
+		}
+		@media (max-width: 1040px) {
+			margin: 0;
+		}
+		@media (max-width: 735px) {
+			margin-right: 10px;
+		}
+	}
+	.img-bilgou {
+		margin: 47px 0px 42px 0px;
+		@media (max-width: 1130px) {
+			width: 189px;
+			height: 101px;
+			margin: 40px 0px 55px 0px;
+		}
+		@media (max-width: 1120px) {
+			margin-bottom: 46px;
+		}
+		@media (max-width: 800px) {
+			margin-bottom: 37px;
+		}
+		@media (max-width: 480px) {
+			width: 114px;
+			height: 62px;
+			display: block;
+			margin: 27px auto 12px auto;
+		}
+	}
+	.balls {
+		@media (max-width: 1130px) {
+			width: 136px;
+			height: 132px;
+		}
+		@media (max-width: 735px) {
+			margin-left: 10px;
+		}
+		@media (max-width: 480px) {
+			width: 78px;
+			height: 76px;
+			margin-bottom: 60px;
+		}
+		@media (max-width: 480px) {
+			margin-top: 14px;
+			margin-bottom: 11px;
+		}
+	}
+	.balls-title {
+		@media (max-width: 480px) {
+			margin-bottom: 23px;
+		}
+	}
+}// END SECTION PSYCHOLOGIST
+
+.doubl-goods {
+	margin-top: 78px;
+}
+
+//SECTION ABOUT=====================================
+.about {
+	width: 100%;
+	min-height: 600px;
+	background: #F7F7F7;
+	padding-bottom: 50px;
+	padding-top: 90px;
+	@media (max-width: 610px) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.container {
+		max-width: 1190px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	&__title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 30px;
+		@media (max-width: 860px) {
+			font-size: 25px;
+		}
+	}
+	&__content-wrp {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 29px;
+		min-height: 384px;
+		@media (max-width: 966px) {
+			min-height: 273px;
+		}
+		@media (max-width: 860px) {
+			margin-top: 22px;
+			min-height: 200px;
+		}
+		@media (max-width: 610px) {
+			flex-direction: column;
+		}
+	}
+	&__video {
+		width: 570px;
+		min-height: 100%;
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		@media (max-width: 1130px) {
+			width: 500px;
+		}
+		@media (max-width: 860px) {
+			width: 455px;
+		}
+		@media (max-width: 670px) {
+			width: 550px;
+		}
+		@media (max-width: 610px) {
+			height: 350px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		@media (max-width: 475px) {
+			height: 300px;
+		}
+		@media (max-width: 400px) {
+			height: 250px;
+		}
+		@media (max-width: 350px) {
+			height: 200px;
+		}
+	}
+	&__video2 {
+		width: 100%;
+		height: 100%;
+	}
+	&__play {
+		position: absolute;
+	}
+	&__text-content {
+		@media (max-width: 1175px) {
+			margin-left: 15px;
+		}
+		@media (max-width: 610px) {
+			margin-top: 16px;
+		}
+	}
+	&__wats-bilgou-title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 20px;
+	}
+	&__bilgou-history {
+		max-width: 570px;
+		font-size: 18px;
+		line-height: 23px;
+		margin-top: 10px;
+		color: #707070;
+		@media (max-width: 966px) {
+			font-size: 16px;
+			line-height: 20px;
+		}
+		@media (max-width: 860px) {
+			margin-top: 6px;
+			span {
+				display: none;
+			}
+		}
+	}
+	&__licinces-title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 20px;
+		margin-top: 35px;
+		@media (max-width: 966px) {
+			margin-top: 20px;
+		}
+		@media (max-width: 860px) {
+			margin-top: 15px;
+		}
+		@media (max-width: 705px) {
+			margin-top: 10px;
+		}
+	}
+	&__certificate-wrp {
+		margin-top: 15px;
+		@media (max-width: 705px) {
+			margin-top: 6px;
+		}
+		img {
+			margin-right: 16px;
+			width: 143px;
+			@media (max-width: 1175px) {
+				width: 143px;
+			}
+			@media (max-width: 966px) {
+				width: 130px;
+				margin-right: 10px;
+			}
+			@media (max-width: 860px) {
+				width: 82px;
+				height: 116px;
+			}
+			@media (max-width: 705px) {
+				height: 100px;
+				width: auto;
+			}
+		}
+	}
+}// END SECTION ABOUT
+
+//SECTION REVIEWS==========
+.reviews {
+	width: 100%;
+	min-height: 456px;
+	padding-bottom: 80px;
+	padding-top: 80px;
+	.container {
+		max-width: 1190px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		h2 {
+			font-family: 'Blogger Bans Bold';
+			font-size: 30px;
+		}
+	}
+	&__wrp {
+		margin-top: 30px;
+	}
+	&__decstop-wrp {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 378px) {
+			display: none;
+		}
+	}
+	&__card {
+		width: 370px;
+		height: 250px;
+		border: 1px solid #EEEEEE;
+		border-radius: 10px;
+		padding-left: 20px;
+		padding-top: 20px;
+		padding-right: 5px;
+		background-image: url(../img/main_page/cavichki.png);
+		background-repeat: no-repeat;
+		background-position: 94% 91%;
+		@media (max-width: 768px) {
+			width: 347px !important;
+		}
+		@media (max-width: 378px) {
+			padding-left: 15px;
+		}
+	}
+	.card-reviews {
+		@media (max-width: 1165px) {
+			width: 300px;
+		}
+		@media (max-width: 955px) {
+			width: 400px;
+		}
+		@media (max-width: 850px) {
+			width: 350px;
+		}
+		@media (max-width: 750px) {
+			width: 48% !important;
+		}
+		@media (max-width: 580px) {
+			width: 100% !important;
+		}
+	}
+	.review-woomen {
+		@media (max-width: 955px) {
+			display: none;
+		}
+	}
+	&__name-foto {
+		display: flex;
+		align-items: center;
+	}
+	&__name-city {
+		margin-left: 12px;
+	}
+	&__name {
+		font-family: 'Blogger Bans Bold';
+		font-size: 18px;
+		@media (max-width: 378px) {
+			font-size: 16px;
+		}
+		span {
+			@media (max-width: 378px) {
+				display: none;
+			}
+		}
+	}
+	&__city {
+		font-size: 16px;
+		margin-top: 6px;
+		color: #707070;
+		@media (max-width: 378px) {
+			font-size: 14px;
+		}
+	}
+	&__review {
+		margin-top: 14px;
+		font-size: 16px;
+		line-height: 125%;
+		color: #333333;
+		max-width: 325px;
+		@media (max-width: 378px) {
+			font-size: 14px;
+		}
+	}
+	&__video {
+		width: 370px;
+		height: 250px;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (max-width: 580px) {
+			display: none;
+		}
+	}
+	&__img-video {
+		width: 100%;
+		height: 100%;
+		@media (max-width: 768px) {
+			width: 361px;
+		}
+		@media (max-width: 750px) {
+			width: 100% !important;
+		}
+	}
+	&__play {
+		position: absolute;
+	}
+
+	.swiper-wrp {
+		width: 300px;
+		margin: 0 auto;
+		display: none;
+		@media (max-width: 378px) {
+			display: block;
+		}
+	}
+
+	.swiper-container {
+		width: 100%;
+		height: 300px;
+	}
+
+	.slide {
+		display: block;
+	}
+	.slide-video {
+		display: flex;
+	}
+	.swiper-pagination-bullet.swiper-pagination-bullet-active {
+		background-image: url(../img/pagination.png);
+		background-position: center;
+		background-color: #fff;
+		background-size: cover;
+		width: 10px;
+		height: 10px;
+	}
+	.swiper-pagination-bullet {
+		width: 6px;
+		height: 6px;
+	}
+	.swiper-container-horizontal>.swiper-pagination-bullets {
+		display: flex;
+    	justify-content: center;
+    	align-items: center;
+	}
+
+
+}//END SECTION REVIEWS
+
+// SECTION FORMS=========================================
+
+.forms {
+	min-height: 100px;
+	width: 100%;
+	background-color: #292929;
+	padding: 25px 0px;
+	.container {
+		max-width: 1190px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+	&__content-wrp {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 100px;
+		@media (max-width: 1157px) {
+			padding: 0 50px;
+		}
+		@media (max-width: 828px) {
+			padding: 0;
+		}
+		@media (max-width: 730px) {
+			padding: 0 50px;
+		}
+		@media (max-width: 525px) {
+			padding: 0;
+		}
+	}
+	&__action-and-form-wrp {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: 1157px) {
+			flex-direction: column;
+		}
+		@media (max-width: 730px) {
+			align-items: flex-start;
+		}
+	}
+	&__action-title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 18px;
+		color: #fff;
+		margin-right: 20px;
+		//text-align: center;
+		@media (max-width: 1157px) {
+			margin: 0 auto;
+		}
+		@media (max-width: 730px) {
+			width: 184px;
+			margin: 0;
+		}
+		@media (max-width: 420px) {
+			font-size: 16px;
+			width: 124px;
+		}
+
+	}
+	&__form-wrp {
+		display: flex;
+		margin: 14px auto 0 auto;
+		@media (max-width: 730px) {
+			flex-direction: column;
+			margin: 14px 0 0 0;
+		}
+		input {
+			width: 200px;
+			height: 50px;
+			background-color: #fff;
+			font-size: 16px;
+			color: #707070;
+			padding: 0 15px;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			@media (max-width: 730px) {
+				border-radius: 5px;
+			}
+			@media (max-width: 420px) {
+				width: 140px;
+				height: 30px;
+			}
+		}
+		button {
+			width: 130px;
+			height: 50px;
+			font-family: 'Blogger Bans Bold';
+			font-size: 16px;
+			color: #fff;
+			background-color: #F07FAE;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			transition: background-color 0.2s;
+			&:hover {
+				background-color: #eb3d85;
+			}
+			@media (max-width: 730px) {
+				border-radius: 5px;
+				width: 200px;
+				margin-top: 5px;
+			}
+			@media (max-width: 420px) {
+				width: 140px;
+				height: 30px;
+			}
+		}
+	}
+	&__tel-and-buttons-wrp {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: 1157px) {
+			flex-direction: column;
+		}
+		@media (max-width: 730px) {
+			align-items: flex-end;
+		}
+	}
+	&__tel-wrp {
+		margin-right: 40px;
+		margin-left: 15px;
+		@media (max-width: 1157px) {
+			display: flex;
+		}
+		@media (max-width: 730px) {
+			flex-direction: column;
+			align-items: flex-start;
+			margin: 0;
+		}
+		img {
+			margin-right: 10px;
+			@media (max-width: 420px) {
+				width: 16px;
+				height: 16px;
+				margin-right: 3px;
+			}
+		}
+		span {
+			font-family: 'Blogger Bans Bold';
+			font-size: 18px;
+			color: #fff;
+			line-height: 100%;
+			@media (max-width: 420px) {
+				font-size: 16px;
+				width: 124px;
+			}
+		}
+		p {
+			font-size: 15px;
+			color: #fff;
+			margin-top: 7px;
+			@media (max-width: 1157px) {
+				text-align: center;
+				margin: 0 auto 0 38px;
+			}
+			@media (max-width: 730px) {
+				margin: 5px 0 0 0;
+			}
+		}
+	}
+	&__img-tel-wrp {
+
+	}
+	&__buttons-wrp {
+		@media (max-width: 1157px) {
+			margin-top: 10px;
+			display: flex;
+		}
+		@media (max-width: 730px) {
+			flex-direction: column;
+			align-items: flex-end;
+		}
+	}
+	&__button {
+		height: 50px;
+		font-family: 'Blogger Bans Bold';
+		font-size: 16px;
+		color: #fff;
+		background-color: transparent;
+		border: solid 2px #fff;
+		border-radius: 5px;
+		transition: background-color 0.2s;
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.102);
+		}
+	}
+	.question {
+		width: 143px;
+		margin-right: 10px;
+		@media (max-width: 1157px) {
+			width: 176px;;
+		}
+		@media (max-width: 730px) {
+			margin: 0;
+		}
+		@media (max-width: 420px) {
+			width: 140px;
+			height: 30px;
+		}
+	}
+	.order {
+		width: 160px;
+		@media (max-width: 1157px) {
+			width: 176px;;
+		}
+		@media (max-width: 730px) {
+			margin-top: 5px;
+		}
+		@media (max-width: 420px) {
+			width: 140px;
+			height: 30px;
+		}
+	}
+
+}// END SECTION FORMS
+
+// SECTION CONTACTS
+
+.contacts {
+	width: 100%;
+	min-height: 263px;
+	background-color: #333333;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	&__content-wrp {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 720px) {
+			padding: 0 50px;
+			@media (max-width: 500px) {
+				padding: 0;
+			}
+		}
+	}
+	&__logo {
+		width: 270px;
+		height: 90px;
+		@media (max-width: 930px) {
+			display: none;
+		}
+	}
+	&__logo3 {
+		display: none;
+		margin-bottom: 25px;
+		@media (max-width: 930px) {
+			display: block;
+		}
+	}
+	&__info-wrp {
+		display: flex;
+		justify-content: space-between;
+		width: 40%;
+		@media (max-width: 930px) {
+			width: 59%;
+		}
+		@media (max-width: 720px) {
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+	&__list-wrp {
+		@media (max-width: 720px) {
+			margin-bottom: 15px;
+		}
+	}
+	&__title {
+		font-family: 'Blogger Bans Bold';
+		font-size: 18px;
+		color: #fff;
+		@media (max-width: 500px) {
+			font-size: 16px;
+		}
+	}
+	&__list {
+		margin-top: 10px;
+		color: #fff;
+	}
+	&__list-item {
+		font-size: 16px;
+		margin-bottom: 13px;
+		text-decoration: underline;
+		color: #fff;
+		@media (max-width: 500px) {
+			font-size: 14px;
+		}
+	}
+	&__contacts {
+		font-size: 16px;
+		margin-bottom: 13px;
+		line-height: 120%;
+		&_email {
+			color: #F07FAE;
+			text-decoration: underline;
+		}
+		@media (max-width: 500px) {
+			font-size: 14px;
+		}
+
+	}
+	&__social {
+		svg {
+			margin-right: 20px;
+			cursor: pointer;
+			path {
+				transition: all .1s;
+				&:hover {
+					fill: #F07FAE;
+				}
+			}
+		}
+	}
+	&__cards-response {
+		display: none;
+		margin-left: auto;
+		@media (max-width: 720px) {
+			display: block;
+			margin-right: 50px;
+			margin-top: -60px;
+		}
+		@media (max-width: 500px) {
+			margin-right: 0;
+		}
+	}
+}
+.container {
+	max-width: 1190px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+// END SECTION CONTACTS
+
+// SECTION FOOTER====================
+
+.footer {
+	width: 100%;
+	min-height: 64px;
+	background-color: #292929;
+	padding: 27px 0px;
+	&__content-wrp {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: 550px) {
+			flex-direction: column;
+		}
+		@media (max-width: 350px) {
+			align-items: start;
+		}
+	}
+	&__personal-dates {
+		font-size: 14px;
+		color: #fff;
+		@media (max-width: 550px) {
+			&:first-child {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	&__cards {
+		@media (max-width: 720px) {
+			display: none;
+		}
+	}
+}
+
+//END SECTION FOOTER
+
+
+// ПОДЛОЖКА ДЛЯ МЕНЮ=======================================
+
+.substrate {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(20, 20, 20, 0.598);
+	z-index: 2;
+	display: none;
+}
+.show {
+	display: block;
+}
+
+// ОПОВЕЩЕНИЕ О ДЕМО=======================================
+
+.demo-wrp {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.904);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    display: none;
+    transition: all 0.5s;
+	padding: 0 15px;
+}
+.demo {
+  max-width: 500px;
+  min-height: 400px;
+  background-color: #fff;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 0 20px 40px 20px;
+  p {
+    font-size: 35px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 100px;
+  }
+  span {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 60px;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
